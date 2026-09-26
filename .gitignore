@@ -1,0 +1,45 @@
+# Build outputs
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.iml
+
+# ASP.NET / .NET
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.pid
+*.publish.xml
+project.lock.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+packages/
+*.snupkg
+.nuget/
+
+# Node / Angular (if used later)
+node_modules/
+dist/
+.angular/
+
+# Secrets / local config
+appsettings.Development.json
+secrets.json
