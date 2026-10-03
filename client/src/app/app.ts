@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { Nav } from '../layout/nav/nav';
 import { AccountService } from '../core/services/account-service';
 import { Home } from '../features/home/home';
+import { User } from '../types/user';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class App implements OnInit {
   private https = inject(HttpClient);
   protected  title = 'Dating App';
 
-  protected members = signal<any>([]);
+  protected members = signal<User[]>([]);
 
   ngOnInit(): void {
     this.setCurrentUser();
@@ -31,8 +32,10 @@ export class App implements OnInit {
   
   async getMembers() {
     try {
-      const response = await this.https.get('https://localhost:5001/api/members').toPromise();
-      this.members.set(response);
+      const response = await this.https.get<User[]>('https://localhost:5001/api/members').toPromise();
+      if (response) {
+        this.members.set(response);
+      }
     } catch (error) {
       console.error(error);
     }

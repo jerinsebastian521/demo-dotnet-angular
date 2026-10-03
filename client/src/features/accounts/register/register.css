@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.auth-shell {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  border-radius: 1.5rem;
+}
+
+.form-control .label-text {
+  display: block;
+}
+
+.input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+}
+
+@media (max-width: 640px) {
+  .auth-card {
+    border-radius: 1rem;
+  }
+}
